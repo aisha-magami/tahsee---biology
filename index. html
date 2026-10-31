@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>رواد التحصيلي في الأحياء</title>
+<style>
+body{font-family:Tahoma,Arial;background:#f1f8f6;color:#17324d;margin:0;line-height:1.9}
+header{background:linear-gradient(135deg,#087e75,#173b60);color:white;text-align:center;padding:35px 15px}
+h1{font-size:30px}
+main{max-width:850px;margin:auto;padding:16px}
+section{background:white;border-radius:16px;padding:20px;margin:16px 0;box-shadow:0 3px 12px #ddd}
+h2,h3{color:#087e75}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card{background:#f2faf8;padding:16px;border-radius:13px}
+button{background:#087e75;color:white;border:0;border-radius:10px;padding:12px;cursor:pointer;font-size:16px}
+label{display:block;margin:8px}
+footer{text-align:center;padding:20px;color:#64748b}
+</style>
+</head>
+<body>
+<header>
+<p>🌿 مبادرة تعليمية إلكترونية</p>
+<h1>روّاد التحصيلي في الأحياء</h1>
+<h3 style="color:white">رحلتك نحو التميز تبدأ من هنا</h3>
+<p>التعلم • التدريب • الإبداع • التفوق</p>
+<hr>
+<p>إعداد المعلمتين: عائشة معجمي وعبير الحريصي</p>
+<p>متوسطة وثانوية عيبان</p>
+<p>مديرة المدرسة: حليمة أبو الخير</p>
+</header>
+
+<main>
+<section style="text-align:center">
+<h2>أهلًا بكِ يا رائدة الأحياء 💚</h2>
+<p>منصتك التدريبية للاستعداد للاختبار التحصيلي، اكتشفي معلوماتك وارفعي مستواك من خلال التدريب المستمر.</p>
+</section>
+
+<section>
+<h2>📚 أقسام المنصة</h2>
+<div class="grid">
+<div class="card">
+<h3>🧬 بنك الأسئلة</h3>
+<p>تدريبات تحصيلية متنوعة في الأحياء.</p>
+<button onclick="document.getElementById('test').scrollIntoView()">ابدئي التدريب</button>
+</div>
+<div class="card">
+<h3>📖 مراجعات الأحياء</h3>
+<p>ملخصات ومفاهيم علمية ومراجعات مركزة.</p>
+</div>
+<div class="card">
+<h3>⏱️ الاختبارات القصيرة</h3>
+<p>اختبري معلوماتك بعد كل موضوع.</p>
+<button onclick="document.getElementById('test').scrollIntoView()">ابدئي الاختبار</button>
+</div>
+<div class="card">
+<h3>🏆 تحدي رواد الأحياء</h3>
+<p>مسابقات علمية وتحديات معرفية.</p>
+</div>
+<div class="card">
+<h3>🌱 بنك المراجعات</h3>
+<p>مراجعة أهم المفاهيم والمصطلحات العلمية.</p>
+</div>
+<div class="card">
+<h3>⭐ شهادات التميز</h3>
+<p>مساحة للاحتفاء بإنجاز الطالبات.</p>
+</div>
+</div>
+</section>
+
+<section id="test">
+<h2>📝 اختبار تجريبي</h2>
+<p>السؤال الأول: ما الوحدة الأساسية لبناء الكائن الحي؟</p>
+<label><input type="radio" name="q1" value="0"> النسيج</label>
+<label><input type="radio" name="q1" value="1"> الخلية</label>
+<label><input type="radio" name="q1" value="0"> العضو</label>
+<p>السؤال الثاني: أين توجد المادة الوراثية DNA في الخلية حقيقية النواة؟</p>
+<label><input type="radio" name="q2" value="1"> النواة</label>
+<label><input type="radio" name="q2" value="0"> جهاز جولجي</label>
+<label><input type="radio" name="q2" value="0"> الغشاء الخلوي</label>
+<p>السؤال الثالث: ما العضية المسؤولة عن إنتاج معظم ATP في التنفس الخلوي؟</p>
+<label><input type="radio" name="q3" value="1"> الميتوكندريا</label>
+<label><input type="radio" name="q3" value="0"> الريبوسوم</label>
+<label><input type="radio" name="q3" value="0"> الفجوة</label>
+<button onclick="grade()">تصحيح الإجابات</button>
+<h3 id="result"></h3>
+</section>
+
+<section>
+<h2>💌 رسالة من معلمتي الأحياء</h2>
+<p>عزيزتي الطالبة، ثقي بقدراتك، فكل سؤال تتدربين عليه يقربك من هدفك. اجعلي التميز عادة، والنجاح رحلة مستمرة.</p>
+</section>
+</main>
+<footer>
+مبادرة روّاد التحصيلي في الأحياء<br>
+عائشة معجمي وعبير الحريصي<br>
+متوسطة وثانوية عيبان
+</footer>
+<script>
+function grade(){
+let score=0;
+for(let i=1;i<=3;i++){
+let answer=document.querySelector('input[name="q'+i+'"]:checked');
+if(answer)score+=Number(answer.value);
+}
+document.getElementById('result').textContent='نتيجتك: '+score+' من 3 🌟';
+}
+</script>
+</body>
+</html>
